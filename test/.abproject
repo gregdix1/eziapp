@@ -3,7 +3,7 @@
   "ProjectGuid": "2a073cce-b65d-4236-b3be-555400f3182e",
   "projectVersion": 1,
   "AppIdentifier": "com.telerik.test",
-  "DisplayName": "test",
+  "DisplayName": "Eziconnect",
   "Author": "",
   "Description": "test",
   "BundleVersion": "1.0",
@@ -41,5 +41,6 @@
     "ID_RESOLUTION_WVGA",
     "ID_RESOLUTION_WXGA",
     "ID_RESOLUTION_HD720P"
-  ]
+  ],
+  "iOSDeploymentTarget": "6.0"
 }

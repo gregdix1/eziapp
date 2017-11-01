@@ -442,7 +442,7 @@
 .km-nova .k-toolbar,
 .km-nova .km-tabstrip,
 .km-nova .km-drawer .km-content {
-  background-image: linear-gradient(to bottom, #2e3246 0%, #242736 100%);
+  background-image: linear-gradient(to bottom, #f32c0d 0%, #f32c0d 100%);
 }
 .km-nova .km-drawer .km-navbar {
   background: #14151e;
@@ -501,6 +501,7 @@
 }
 .km-nova #navigation-container.km-tabstrip .km-button {
   vertical-align: middle;
+    border-radius: 0px;
 }
 .km-nova p {
   margin-left: 1rem;

@@ -12,7 +12,11 @@ app.localization.registerView('homeView');
     app.homeView.set('title', 'Home');
 })();
 function setFrame(){
- document.getElementById("sgframe").src = "components/contactsView/view.html";
- document.getElementById("setdiv").innerHTML = "ccccccc";
+ //document.getElementById("sgframe").src = "components/contactsView/view.html";
+//document.getElementById("setdiv").innerHTML = "ccccccc";
     alert('yes');}
+function triggerFootNav(){
+ $('#signIn').trigger('click');
+    alert('yes');
+}
 // END_CUSTOM_CODE_homeView
