@@ -1,0 +1,44 @@
+
+<script>
+
+    document.addEventListener("deviceready", onDeviceReady, false);
+    function onDeviceReady() {
+       
+    StatusBar.hide();
+
+    }
+function setContent() {
+       $.get("components/login.html", function (data) {
+       
+        $('#loginHome').html(data);
+        // components/settingsView/view.html
+      });
+    }
+    
+  
+    
+    
+</script>
+<div data-role="view" data-title="View" data-layout="main" data-model="app.homeView" data-show="app.homeView.onShow" data-after-show="app.homeView.afterShow"
+    id="homeViewScreen" class="screen">
+    <header data-role="header">
+        <div data-role="navbar" class="header-text"> <span data-bind="text: strings.homeView.title"></span> </div>
+    </header>
+    <!-- START_CUSTOM_CODE_homeView -->
+    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
+       <div id="loginHome">    
+    
+    <img src="./files/ezi_logo_login.png" width="95%" height="auto" style="margin-top: 20px" onclick="setContent()"> 
+    <h1 style="display:none" data-bind="html: title"></h1>
+      <div id="hme"> 
+       <!--<iframe id="sgframe" src="components/maps/index.html" width="100%" height="400px"></iframe> 
+        <a href="components/dashView/view.html" data-icon="home">DASH</a> -->
+         <div style="width: 100%; text-align:center; margin-top:30px;margin-right:10px">Welcome to Eziconnect Wifi Access</div>
+         <img src="./files/loader.gif" width="95%" height="auto" style="margin-top: 20px" onclick="setContent()">
+         <div style="width: 100%; text-align:center; margin-top:10px">Searching for Local Access Point</div>
+  
+      </div>
+   </div>
+    <!-- <div id="setdiv" onclick="setFrame()">SET</div>
+    END_CUSTOM_CODE_homeView -->
+</div>

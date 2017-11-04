@@ -1,0 +1,31 @@
+<script>
+
+    //document.addEventListener("deviceready", onDeviceReady, false);
+    function getSrchResults() {
+        console.log(StatusBar);
+        StatusBar.hide();
+
+
+
+        //$.get("http://biz-park.co.za/eziapp/tile-menu.html", function (data) {
+        $.get("https://www.google.co.za/search?source=hp&ei=fRX6WcKoHciiU7SYtbgO&q=free+wifi&oq=free+wifi", function (data) {
+
+            $('#targetSettingsX').html(data);
+
+        });
+    }
+</script>
+
+<div style="width:100%; display:grid; position: fixed; z-index: 5999; background-color: #fff;top:0px; ">
+    <input type="text" id="name" name="name" style="padding: 15px;font-size: 14pt; width:90%;margin: 10px; " class="form-control" placeholder="Search.." required="" pb-role="username"> <br />
+    <button id="btnReg2" type="submit" name="submit2" style="background-color: #056db5;margin: 10px;padding: 21px;width: 65px; position: absolute;top: 0px;right: 3px;border-radius: 0px 4px 4px 0px; border-width: 0px;color: #fff" onclick="getSrchResults()">GO</button>
+</div>
+<!-- START_CUSTOM_CODE_settingsView -->
+
+<!-- <h1 data-bind="html: title"></h1>-->
+<!--<iframe id="sgframeX" frameborder="0" src="components/maps/index.html" width="100%" height="500px"></iframe>-->
+<div style=" margin-top: 35px;" id="targetSettingsX">
+
+
+</div>
+<!-- END_CUSTOM_CODE_settingsView -->
