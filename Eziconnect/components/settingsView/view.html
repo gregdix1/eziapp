@@ -1,20 +1,73 @@
 <script>
 
     //document.addEventListener("deviceready", onDeviceReady, false);
-    function getSrchResults() {
-        console.log(StatusBar);
-        StatusBar.hide();
-       
-    
-   
-    //$.get("http://biz-park.co.za/eziapp/tile-menu.html", function (data) {
-       $.get("https://www.google.co.za/search?source=hp&ei=fRX6WcKoHciiU7SYtbgO&q=free+wifi&oq=free+wifi", function (data) {
-        
-        $('#targetSettings').html(data);
+    function setMain(id) {
+        var title = id;
 
-    });
-}
+        document.getElementById("titlepg").innerHTML = title;
+   }
 </script>
+<style>
+
+
+    .adBnr1Set {
+        width: 97%;
+        height: 130px;
+        border: 1px solid #ccc;
+        text-align: center;
+        margin: 5px;
+    }
+
+
+    .containerNavSet {
+        width: 100%;
+        text-align: center;
+        //margin: 2.5%;
+    }
+
+    .containerMainSet {
+        width: 100%;
+        text-align: left;
+       // margin: 2.5%;
+        margin-top: 0px;
+        min-height: 150px;
+    }
+
+    .boxNavSet {
+        width: 33%;
+        font-size: 10px;
+        font-weight: normal;
+        text-align: center;
+        float: left;
+        padding-bottom: 5px;
+        // border-bottom: 1px solid #ccc;
+        height: 70px;
+        margin-top: 15px;
+    }
+
+    .iconsSet {
+        width: 40%;
+        max-width: 200px;
+        height: auto;
+        margin-top: 10px;
+    }
+
+    .line1Set {
+        width: 100%;
+        text-align: center;
+        margin: 0px;
+        border-bottom: 1px solid #ccc;
+    }
+
+    .lineBtmActiveSet {
+      //  border-bottom: 4px solid #f32c0d;
+        font-weight: bold;
+    }
+
+    .lbl {
+        margin-top: 10px;
+    }
+</style>
 <div data-role="view" data-title="View" data-layout="main" data-model="app.settingsView" data-show="app.settingsView.onShow" data-after-show="app.settingsView.afterShow" id="settingsViewScreen" class="screen">
     <header data-role="header">
         <div data-role="navbar" class="header-text">
@@ -23,16 +76,47 @@
 
         </div>
     </header>
-    <div style="width:100%; display:grid; position: fixed; z-index: 5999; background-color: #fff; ">
-     <input type="text" id="name" name="name" style="padding: 20px;width:90%;margin: 10px; " class="form-control" placeholder="Search.." required="" pb-role="username"> <br />
-  <button id="btnReg2" type="submit" name="submit2" style="background-color: #056db5;margin: 10px;padding: 22px;width: 65px; position: absolute;top: 0px;right: 10px;border-radius: 0px 4px 4px 0px; border-width: 0px;color: #fff" onclick="getSrchResults()">GO</button>
-</div>
+   
     <!-- START_CUSTOM_CODE_settingsView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-   <!-- <h1 data-bind="html: title"></h1>-->
+    <h1 data-bind="html: title"></h1>
     <!--<iframe id="sgframeX" frameborder="0" src="components/maps/index.html" width="100%" height="500px"></iframe>-->
-    <div style=" margin-top: -50px;" id="targetSettings"> 
-        
+    <div style=" margin-top: 0px;" id="targetSettingsSet"> 
+        <div class="containerNavSet">
+           <!-- <div id="" class="boxNavSet " onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/newspaper.png"><br><div class="lbl">NEWS</div></div>
+            <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/weather.png"><br><div class="lbl">WEATHER</div></div>
+            <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/map.png"><br><div class="lbl">MAPS</div></div>-->
+            <a href="#components/dashView/view.html">
+                <div id="Favorites" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/heart.png"><br><div class="lbl">FAVORITES</div></div>
+                </a>
+            <a href="#components/dashView/view.html">
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/blog.png"><br><div class="lbl">CHAT</div></div>
+                </a>
+            <a href="#components/dashView/view.html">
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/cart.png"><br><div class="lbl">SHOP</div></div>
+                </a>
+            <a href="#components/dashView/view.html">
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/photos.png"><br><div class="lbl">PHOTOS</div></div>
+                </a>
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/contact.png"><br><div class="lbl">MAIL</div></div>
+
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/scan.png"><br><div class="lbl">SCAN</div></div>
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/lock.png"><br><div class="lbl">SECURITY</div></div>
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/docs.png"><br><div class="lbl">DOCS</div></div>
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/video.png"><br><div class="lbl">MEDIA</div></div>
+
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/facebook.png"><br><div class="lbl">FACEBOOK</div></div>
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/pinterest.png"><br><div class="lbl">PINTEREST</div></div>
+                <div id="" class="boxNavSet" onclick="setMain(this.id)"><img class="iconsSet" src="./img/icons/twitter.png"><br><div class="lbl">TWITTER</div></div>
+                <a href="#components/homeView/view.html">
+                    <div id="" class="boxNavSet"><img class="iconsSet" src="./img/icons/back2.png"><br><div class="lbl">BACK</div></div>
+                </a>
+                <!--<div class="box"><img class="icons" src="images/mobile-icon2.png"><br><div class="lbl">MOBILE APPS</div></div>
+        <div class="box"><img class="icons" src="images/scial-icon.png"><br><div class="lbl">SOCIAL MEDIA</div></div>
+        <div class="box"><img class="icons" src="images/cardboard_icon.png"><br><div class="lbl">VIRTUAL REALITY</div></div>
+        <div class="box"><img class="icons" src="images/uxdesign-icon2.png"><br><div class="lbl">WEBSITES</div></div>-->
+
+</div>   
         
     </div>
     <!-- END_CUSTOM_CODE_settingsView -->

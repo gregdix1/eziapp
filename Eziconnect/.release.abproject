@@ -1,5 +1,6 @@
 {
   "CorePlugins": [
+    "com.rjfun.cordova.plugin.admob@3.2.4",
     "cordova-plugin-battery-status",
     "cordova-plugin-camera",
     "cordova-plugin-contacts",

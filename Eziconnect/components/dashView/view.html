@@ -20,7 +20,8 @@
     <header data-role="header">
         <div data-role="navbar" class="header-text">
 
-            <span data-bind="text: strings.dashView.title"></span>
+            <!--<span data-bind="text: strings.dashView.title"></span>-->
+            <span id="titlepg"></span>
 
         </div>
     </header>
@@ -31,7 +32,9 @@
     <h1 data-bind="html: title"></h1>
     
     <div id="results">
-       <p>DASH</p>
+        <a href="#components/settingsView/view.html">
+            <div id="" class="boxNavSet"><img class="iconsSet" src="./img/icons/back2.png"><br><div class="lbl">BACK</div></div>
+        </a>
 
     </div>
     <!-- END_CUSTOM_CODE_settingsView -->

@@ -16,8 +16,34 @@ function setContent() {
     }
     
   
+    // index.html#components/signinView/view.html
+    function setContentLoggedIn2() {
+        $.get("components/myhome.html", function (data) {
+
+            $('#loginHome').html(data);
+            alert("xx");
+        });
+    }   
+
+    setTimeout(function () { step1(); }, 5000);
+
+    function step1() {
+        document.getElementById("conecting").innerHTML = "Searching for Access Point...<br />Located AP: Eziconnect-01224";
+        setTimeout(function () { step2(); }, 3000);
+    }
+    function step2() {
+        document.getElementById("conecting").innerHTML = "Searching for Access Point...<br />Located AP: Eziconnect-01224<br/>Connecting to: Eziconnect-01224"
+        setTimeout(function () { step3(); }, 2000);
+    }
+
+    function step3() {
+        document.getElementById("conecting").innerHTML = "You are Connected!";
+        document.getElementById("loader").src = "./files/wifi_yes.png";
     
-    
+        setTimeout(function () { setContent(); }, 2000);
+    }
+   
+
 </script>
 <div data-role="view" data-title="View" data-layout="main" data-model="app.homeView" data-show="app.homeView.onShow" data-after-show="app.homeView.afterShow"
     id="homeViewScreen" class="screen">
@@ -27,15 +53,16 @@ function setContent() {
     <!-- START_CUSTOM_CODE_homeView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
        <div id="loginHome">    
-    
-    <img src="./files/ezi_logo_login.png" width="95%" height="auto" style="margin-top: 20px" onclick="setContent()"> 
+           <a href="#components/signinView/view.html">
+               <img src="./files/ezi_logo_login.png" width="100%" height="auto" style="margin-top: 20px" onclick="">
+           </a>
     <h1 style="display:none" data-bind="html: title"></h1>
       <div id="hme"> 
        <!--<iframe id="sgframe" src="components/maps/index.html" width="100%" height="400px"></iframe> 
         <a href="components/dashView/view.html" data-icon="home">DASH</a> -->
-         <div style="width: 100%; text-align:center; margin-top:30px;margin-right:10px">Welcome to Eziconnect Wifi Access</div>
-         <img src="./files/loader.gif" width="95%" height="auto" style="margin-top: 20px" onclick="setContent()">
-         <div style="width: 100%; text-align:center; margin-top:10px">Searching for Local Access Point</div>
+         <div style="width: 100%; text-align:center; margin-top:10px;margin-right:10px">Welcome to Eziconnect <br /> Wifi Access</div>
+         <img id="loader" src="./files/loader.gif" width="95%" height="auto" style="margin-top: 0px" onclick="setContent()">
+         <div id="conecting" style="width: 100%; text-align:center; margin-top:10px">Searching for Access Point</div>
   
       </div>
    </div>

@@ -5,13 +5,23 @@
        
     }
    
-    $.get("components/login.html", function (data) {
+    $.get("components/reset.html", function (data) {
        
-        $('#login').html(data);
+        $('#reset').html(data);
 
     });
     
+     function getReg() {
+       
     
+   
+    $.get("components/register.html", function (data) {
+       
+        $('#login').html(data);
+        $('#btnReg2').html('Login');
+
+    });
+}
 </script>
 
 <div data-role="view" data-title="View" data-layout="main" data-model="app.signinView" data-show="app.signinView.onShow" data-after-show="app.signinView.afterShow" id="signinViewScreen" class="screen">
@@ -27,10 +37,12 @@
     <!-- START_CUSTOM_CODE_settingsView -->
     <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
     <!--<h1 data-bind="html: title"></h1>-->
-    <div id="login">
+    <div id="reset">
        
 
     </div>
-   
+    <div style="width: 100%; text-align:center; margin-top:10px">
+    <button id="btnReg2" type="submit" name="submit2" style="border: 1px solid #ccc; background-color: #ef4c23; width: 90%;height: 45px;color: #fff;padding: 10px;border-radius: 4px; border-width: 0px;" onclick="getReg()">Create New Account >></button>
+        </div>
     <!-- END_CUSTOM_CODE_settingsView -->
 </div>
